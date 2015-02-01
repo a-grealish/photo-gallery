@@ -1,127 +1,65 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Photo Gallery</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-</head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Photo Gallery</a>
+<!-- TODO: Add next and previous icons to sides of screen -->
+<div class="row">
+    <div class="col-md-12">
+        <h3><span editable-text="photo.title">{{photo.title || "No Title"}}</span> - <a href="#" editable-text="photo.category">{{photo.category || "No Category"}}</a></h3>
+        <!-- TODO: Make height fit window size -->
+        <img class="img-responsive" ng-src="{{photo.url}}">
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    </div><!--/.nav-collapse -->
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <h3 >Photo Description</h3>
+        <p editable-textarea="photo.description" e-rows="7" e-cols="40">{{photo.description}}</p>
     </div>
-    </nav>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <div class="container">
-            <!-- TODO: Add next and previous icons to sides of screen -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Photo Heading - <a href="#">Category</a></h3>
-                    <!-- TODO: Make height fit window size -->
-                    <img src="http://placehold.it/1200x800/jpg">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <h3>Photo Description</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque varius orci, sed consequat ipsum tincidunt sed. Nulla at maximus mi. Praesent ac sapien enim. Fusce convallis nisl in risus scelerisque euismod. Praesent porttitor sollicitudin elit, vel mattis nisi euismod quis. Morbi tristique lacinia fermentum. Integer fringilla elementum aliquet. Nullam quis ultrices ante, non suscipit enim. Quisque quis ante arcu. Nullam luctus elit at porttitor elementum. Nulla accumsan magna eget pulvinar congue. Morbi quis erat et mi gravida lacinia at vel enim. Ut suscipit, mauris quis pharetra accumsan, nibh odio ornare nisl, sit amet dignissim libero nunc at risus. Donec tincidunt sem ligula, rutrum consequat enim ultricies vitae.
-                    </p>
-                    <p>Curabitur sem velit, auctor sed neque in, luctus vehicula tortor. Quisque vel aliquet nibh. Aenean auctor id nibh quis feugiat. Suspendisse nibh orci, venenatis eu dictum vel, maximus eget magna. Fusce dolor risus, consequat eu nisi vitae, malesuada vulputate sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse congue scelerisque libero quis ornare. In condimentum nulla eget leo bibendum mollis. In arcu nulla, rutrum vel laoreet a, euismod non magna. Donec sed gravida nisi, ut lobortis est. Phasellus vehicula nunc eu erat tristique lacinia. Pellentesque nec nunc felis. Ut sit amet aliquam libero. Morbi cursus turpis sit amet urna placerat convallis.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Photo Details</h3>
-                    <ul>
-                        <li>Location - <a href="#">London, United Kingdom</a></li>
-                        <li>Date taken - Lorum Ipsum</li>
-                        <li>Dimensions - Lorum Ipsum</li>
-                        <li>File name - Lorum Ipsum</li>
-                        <li>File size - Lorum Ipsum</li>
-                        <li>Camera - Lorum Ipsum</li>
-                        <li>Focal Length - Lorum Ipsum</li>
-                        <li>Exposure - Lorum Ipsum</li>
-                        <li>F Number - Lorum Ipsum</li>
-                        <li>ISO - Lorum Ipsum</li>
-                        <li>Camera make - Lorum Ipsum</li>
-                        <li>Flash (used or not used) - Lorum Ipsum</li>
-                        <li>Exposure Bias - Lorum Ipsum</li>
-                        <li>Tags - <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Related Photos</h3>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="./image.html">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                </div>                
-            </div>
+    <div class="col-md-4">
+        <h3>Photo Details</h3>
+        <ul>
+            <li ng-repeat="property in photo.properties">
+                <span ng-switch="property.type">
+                    <span ng-switch-when="text">{{property.name}} - <span editable-text="property.value">{{property.value || "No Value"}}</span></span>
+                    <span ng-switch-when="date">{{property.name}} - <span editable-date="property.value">{{(property.value | date:"dd/MM/yyyy") || "no Date"}}</span></span>
+                    <span ng-switch-default>{{property.name}} - {{property.value || "No Value"}}</span>
+                </span>
+            </li>
+<!--             <li>Location - <a href="#">London, United Kingdom</a></li>
+            <li>Date taken - <span editable-date="photo.date_taken">{{ (photo.date_taken | date:"dd/MM/yyyy") || "No Date"}}</span></li>
+            <li>Dimensions - Lorum Ipsum</li>
+            <li>File name - Lorum Ipsum</li>
+            <li>File size - Lorum Ipsum</li>
+            <li>Camera - Lorum Ipsum</li>
+            <li>Focal Length - Lorum Ipsum</li>
+            <li>Exposure - Lorum Ipsum</li>
+            <li>F Number - Lorum Ipsum</li>
+            <li>ISO - Lorum Ipsum</li>
+            <li>Camera make - Lorum Ipsum</li>
+            <li>Flash (used or not used) - Lorum Ipsum</li>
+            <li>Exposure Bias - Lorum Ipsum</li> -->
+            <li>Tags - <span ng-repeat="tag in photo.tags"><a ng-href="/search?tag={{tag}}">{{tag}}</a>{{$last ? '' : ', '}}</span></li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Related Photos</h3>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="./image.html">
+                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+            </a>
         </div>
-
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
-    </html>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+            </a>
+        </div>
+    </div>                
+</div>

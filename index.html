@@ -12,25 +12,33 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Styles  -->
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- Custom Themed Bootstrap -->
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="js/vendor/angular.js"></script>
-    <script src="js/vendor/angular-route.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+    
+    <!-- Dependancies -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    
+    <!-- Application -->
     <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/imageController.js"></script>
 </head>
 <body>
-    <div ng-app="photoGalleryApp">
-        <div ng-view></div>
+    <div ng-app="photoGalleryApp" ng-hint>
+        <div ng-include='"views/header.html"'></div>
+        <div class="container" ng-view></div>
     </div>
 
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.js"><\/script>')</script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
